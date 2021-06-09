@@ -1,0 +1,10 @@
+name: random-quote-action
+# Name of the action
+description: Add a random quote on your README
+run:
+  using: 'node12'
+  main: 'index.js'
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+    # Every 30 minutes should be enough
