@@ -1,0 +1,13 @@
+name: main
+on:
+  schedule:
+    - cron: '*/* 30 * * *'
+    # Every 30 minutes should be enough
+
+jobs:
+  check-npm-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm -v
