@@ -2,10 +2,7 @@
   "name": "random-quote-action",
   "version": "1.0.0",
   "description": "Random Quote on Readme I think, am not sure",
-  "main": "./Source/Action.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "./Source/Action.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SpiderMath/Random-Quote-Action.git"
@@ -16,11 +13,11 @@
     "url": "https://github.com/SpiderMath/Random-Quote-Action/issues"
   },
   "homepage": "https://github.com/SpiderMath/Random-Quote-Action#readme",
-  "devDependencies": {
-    "@types/node": "^15.12.2"
-  },
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0"
   }
 }
