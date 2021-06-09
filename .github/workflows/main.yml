@@ -1,7 +1,7 @@
 name: main
 on:
   schedule:
-    - cron: '*/* 30 * * *'
+    - cron: '*/30 * * * *'
     # Every 30 minutes should be enough
 
 jobs:
