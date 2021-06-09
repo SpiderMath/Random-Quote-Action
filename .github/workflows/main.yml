@@ -1,7 +1,7 @@
 name: main
-on:
-  schedule:
-    - cron: '*/1 * * * *'
+on: [push]
+  # schedule:
+  #   # - cron: '*/1 * * * *'
     # Every 30 minutes should be enough
 
 jobs:
