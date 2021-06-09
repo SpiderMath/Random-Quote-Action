@@ -1,0 +1,23 @@
+{
+  "name": "random-quote-action",
+  "version": "1.0.0",
+  "description": "This is a random Quote Action",
+  "main": "Index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpiderMath/Random-Quote-Action.git"
+  },
+  "author": "Defective Detective",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SpiderMath/Random-Quote-Action/issues"
+  },
+  "homepage": "https://github.com/SpiderMath/Random-Quote-Action#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
+  }
+}
