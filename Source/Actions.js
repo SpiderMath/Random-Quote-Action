@@ -41,7 +41,7 @@ async function commitFile() {
 		'user.email',
 		'41898282+github-actions[bot]@users.noreply.github.com',
 	]);
-	await exec('git', ['config', '--global', 'user.name', 'readme-bot']);
+	await exec('git', ['config', '--global', 'user.name', GH_USERNAME]);
 	await exec('git', ['add', 'README.md']);
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
 	await exec('git', ['push']);
