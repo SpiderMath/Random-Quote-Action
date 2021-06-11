@@ -4,7 +4,7 @@ const { Toolkit } = require('actions-toolkit');
 const { readFileSync, writeFileSync } = require('fs');
 const quotes = require('./Quotes.json');
 
-const GH_USERNAME = core.getInput('GH_USERNAME');
+const GH_USERNAME = 'Quotes Bot';
 const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
 
 // Execute shell commands FIRST
