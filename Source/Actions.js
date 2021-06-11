@@ -1,8 +1,7 @@
 const core = require('@actions/core');
 const { spawn } = require('child_process');
 const { Toolkit } = require('actions-toolkit');
-const { readFileSync } = require('fs');
-const { writeFile } = require('fs/promises');
+const { readFileSync, writeFileSync } = require('fs');
 const quotes = require('./Quotes.json');
 
 const GH_USERNAME = core.getInput('GH_USERNAME');
@@ -68,7 +67,7 @@ Toolkit
 
 		readmeContent.splice(startIndex + 1, 0, string);
 
-		await writeFile('./README.md', readmeContent.join('\n'));
+		writeFileSync('./README.md', readmeContent.join('\n'));
 		tools.log.debug(readmeContent.join('\n'));
 
 		try {
