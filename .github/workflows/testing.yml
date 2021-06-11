@@ -17,4 +17,4 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16
-      - uses: spidermath
+      - uses: spidermath/random-quote-action@main
