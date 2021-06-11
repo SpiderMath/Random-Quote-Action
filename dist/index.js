@@ -2353,6 +2353,13 @@ module.exports = require("timers");
 
 /***/ }),
 
+/***/ 225:
+/***/ (function(module) {
+
+module.exports = require("fs/promises");
+
+/***/ }),
+
 /***/ 242:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -6678,7 +6685,8 @@ exports.RequestError = RequestError;
 const core = __webpack_require__(470);
 const { spawn } = __webpack_require__(129);
 const { Toolkit } = __webpack_require__(461);
-const { readFileSync, writeFileSync } = __webpack_require__(747);
+const { readFileSync } = __webpack_require__(747);
+const { writeFile } = __webpack_require__(225);
 const quotes = __webpack_require__(418);
 
 const GH_USERNAME = core.getInput('GH_USERNAME');
@@ -6744,7 +6752,8 @@ Toolkit
 
 		readmeContent.splice(startIndex + 1, 0, string);
 
-		writeFileSync('./README.md', readmeContent.join('\n'));
+		await writeFile('./README.md', readmeContent.join('\n'));
+		tools.log.debug(readmeContent.join('\n'));
 
 		try {
 			commitFile();
