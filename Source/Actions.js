@@ -2,10 +2,11 @@ const core = require('@actions/core');
 const { spawn } = require('child_process');
 const { Toolkit } = require('actions-toolkit');
 const { readFileSync, writeFileSync } = require('fs');
+const { join } = require('path');
 
 const GH_USERNAME = core.getInput('GH_USERNAME');
 const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
-const quotes = JSON.parse(readFileSync('../Source/Quotes.json'));
+const quotes = JSON.parse(readFileSync(join(__dirname, '../Source/Quotes.json')));
 
 // Execute shell commands FIRST
 function exec(cmd, args = []) {
