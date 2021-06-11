@@ -42,7 +42,7 @@ async function commitFile() {
 		'41898282+github-actions[bot]@users.noreply.github.com',
 	]);
 	await exec('git', ['config', '--global', 'user.name', GH_USERNAME]);
-	await exec('git', ['add', 'README.md']);
+	await exec('git', ['add', '-A']);
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
 	await exec('git', ['push']);
 }
@@ -67,7 +67,7 @@ Toolkit
 
 		readmeContent.splice(startIndex + 1, 0, string);
 
-		writeFileSync('./README.md', readmeContent.join('\n'));
+		writeFileSync('./README.md', readmeContent.join('\n').toString());
 		tools.log.debug(readmeContent.join('\n'));
 
 		try {
