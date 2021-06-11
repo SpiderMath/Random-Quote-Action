@@ -14,9 +14,12 @@
   },
   "homepage": "https://github.com/SpiderMath/Random-Quote-Action#readme",
   "dependencies": {
-    "@actions/core": "^1.4.0"
+    "@actions/core": "^1.4.0",
+    "actions-toolkit": "^6.0.1",
+    "common-tags": "^1.8.0"
   },
   "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
     "eslint": "^7.28.0"
   }
 }

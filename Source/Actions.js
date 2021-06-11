@@ -1,6 +1,8 @@
 const quotes = require('./Quotes.json');
 const core = require('@actions/core');
 const { spawn } = require('child_process');
+const { Toolkit } = require('actions-toolkit');
+const { readFileSync, writeFileSync } = require('fs');
 
 const GH_USERNAME = core.getInput('GH_USERNAME');
 const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
@@ -44,3 +46,39 @@ async function commitFile() {
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
 	await exec('git', ['push']);
 }
+
+Toolkit
+	.run(async (tools) => {
+		const readmeContent = readFileSync('./README.md', 'utf-8').split('\n');
+
+		const startIndex = readmeContent.findIndex(content => content.trim() === '<!--QUOTE-BOT:start-->');
+		const endIndex = readmeContent.findIndex(content => content.trim() === '<!--QUOTE-BOT:end-->');
+
+		if(startIndex === -1) return tools.exit.failure('Couldn\'t find the <!--QUOTE-BOT:start--> comment! Exiting the process...');
+		if(endIndex === -1) return tools.exit.failure('Couldn\'t find the <!--QUOTE-BOT:end--> comment! Exiting the process...');
+
+		if(startIndex !== endIndex) readmeContent.splice(startIndex + 1, (endIndex - startIndex) - 1);
+
+		const quote = getRandomQuote();
+		const string = `
+			## <i>${quote.text}</i><br>
+			## - <b>${quote.author}</b><br>		
+		`;
+
+		readmeContent.splice(startIndex + 1, 0, string);
+
+		writeFileSync('./README.md', readmeContent.join('\n'));
+
+		try {
+			commitFile();
+		}
+		catch(err) {
+			return tools.exit.failure(err);
+		}
+
+		tools.exit.success('Updated the readme successfully 🚀');
+
+	}, {
+		events: ['schedule', 'workflow_dispatch'],
+		secrets: ['GITHUB_TOKEN'],
+	});
