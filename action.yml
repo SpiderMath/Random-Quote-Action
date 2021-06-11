@@ -11,3 +11,7 @@ inputs:
     description: 'The commit message, which you want to be displayed on update'
     default: ':zap: Updated the README with a new quote'
     required: false
+
+runs:
+  using: node16
+  main: 'dist/index.js'

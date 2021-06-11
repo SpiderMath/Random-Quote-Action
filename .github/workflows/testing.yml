@@ -1,0 +1,18 @@
+name: random-quote
+on:
+  schedule:
+    - cron: '*/1 * * * *'
+    # Runs every 10 minutes since commit (or so is expected)
+  workflow_dispatch:
+
+jobs:
+  putRandomQuote:
+    runs-on: ubuntu-latest
+    name: Time to mess up, by my goofiness. Credit goes to Random Quote
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - uses: SpiderMath/Random-Quote-Action@master
