@@ -18,3 +18,4 @@ jobs:
         with:
           node-version: 16
       - uses: spidermath/random-quote-action@main
+        env: ${{secrets.GITHUB_TOKEN}}
