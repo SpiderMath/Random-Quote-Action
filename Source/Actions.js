@@ -37,11 +37,11 @@ function getRandomQuote() {
 async function commitFile() {
 	await exec('git', [
 		'config',
-		'--global',
+		'--local',
 		'user.email',
-		'41898282+github-actions[bot]@users.noreply.github.com',
+		'actions@github.com',
 	]);
-	await exec('git', ['config', '--global', 'user.name', GH_USERNAME]);
+	await exec('git', ['config', '--local', 'user.name', GH_USERNAME]);
 	await exec('git', ['add', '-A']);
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
 	await exec('git', ['push']);
