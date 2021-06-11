@@ -4163,6 +4163,14 @@ module.exports = require("stream");
 
 /***/ }),
 
+/***/ 418:
+/***/ (function(module) {
+
+module.exports = eval("require")("./Quotes.json");
+
+
+/***/ }),
+
 /***/ 427:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -6671,10 +6679,10 @@ const core = __webpack_require__(470);
 const { spawn } = __webpack_require__(129);
 const { Toolkit } = __webpack_require__(461);
 const { readFileSync, writeFileSync } = __webpack_require__(747);
+const quotes = __webpack_require__(418);
 
 const GH_USERNAME = core.getInput('GH_USERNAME');
 const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
-const quotes = JSON.parse(readFileSync('../Source/Quotes.json'));
 
 // Execute shell commands FIRST
 function exec(cmd, args = []) {
