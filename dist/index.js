@@ -6681,7 +6681,7 @@ const { Toolkit } = __webpack_require__(461);
 const { readFileSync, writeFileSync } = __webpack_require__(747);
 const quotes = __webpack_require__(418);
 
-const GH_USERNAME = core.getInput('GH_USERNAME');
+const GH_USERNAME = 'Quotes Bot';
 const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
 
 // Execute shell commands FIRST
