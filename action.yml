@@ -1,5 +1,5 @@
-name: 'Random-Quote-Action'
-description: 'Puts a random Quote in your README'
+name: 'Random-Programming-Quote-Action'
+description: 'Puts a random programming Quote in your README'
 author: SpiderMath
 
 inputs:
