@@ -45,7 +45,7 @@ async function commitFile() {
 	await exec('git', ['config', '--global', 'user.name', GH_USERNAME]);
 	await exec('git', ['add', 'README.md']);
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
-	await exec('git', ['push']);
+	await exec('git', ['push', 'origin']);
 }
 
 Toolkit
