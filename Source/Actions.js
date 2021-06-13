@@ -68,7 +68,7 @@ Toolkit
 		readmeContent.splice(startIndex + 1, 0, string);
 
 		writeFileSync('./README.md', readmeContent.join('\n').toString());
-		console.log(readFileSync('./README.md'));
+		console.log(readFileSync('./README.md').toString());
 
 		try {
 			commitFile();
