@@ -43,7 +43,7 @@ async function commitFile() {
 		'actions@github.com',
 	]);
 	await exec('git', ['config', '--local', 'user.name', GH_USERNAME]);
-	await exec('git', ['add', '-A']);
+	await exec('git', ['add', '.']);
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
 	await exec('git', ['push']);
 }
