@@ -9,7 +9,7 @@ module.exports =
 /******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
+/******/ 			return installedModules[moduleId].exports; 
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
@@ -7422,7 +7422,7 @@ Toolkit
 
 		const quote = getRandomQuote();
 		const string = stripIndents`
-			${"#".repeat(QUOTE_FONT_SIZE)} <i>${quote.text}</i><br>
+			${"#".repeat(QUOTE_FONT_SIZE)} <i>${quote.quote}</i><br>
 			${"#".repeat(QUOTE_FONT_SIZE)} - <b>${quote.author}</b><br>		
 		`;
 
