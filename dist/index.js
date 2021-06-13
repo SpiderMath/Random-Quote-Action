@@ -7438,7 +7438,7 @@ Toolkit
 		console.log(readFileSync('./README.md').toString());
 
 		try {
-			commitFile();
+			await commitFile();
 		}
 		catch(err) {
 			return tools.exit.failure(err);
