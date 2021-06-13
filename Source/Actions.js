@@ -7,6 +7,7 @@ const { spawn } = require("child_process");
 
 let QUOTE_FONT_SIZE = core.getInput("QUOTE_FONT_SIZE");
 const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
+const GH_USERNAME = core.getInput("GH_USERNAME");
 
 function getRandomQuote() {
 	return quotes[
@@ -65,7 +66,7 @@ Toolkit
 		writeFileSync("./README.md", readmeContent.join("\n").toString());
 
 		await execute("git", ["config", "--local", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"]);
-		await execute("git", ["config", "--local", "user.name", "Trial Bot"]);
+		await execute("git", ["config", "--local", "user.name", GH_USERNAME]);
 		await execute("git", ["add", "-A"]);
 		await execute("git", ["commit", "-m", COMMIT_MESSAGE]);
 		await execute("git", ["push"]);
