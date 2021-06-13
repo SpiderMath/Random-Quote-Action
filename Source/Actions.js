@@ -62,7 +62,6 @@ Toolkit
 		readmeContent.splice(startIndex + 1, 0, string);
 
 		writeFileSync('./README.md', readmeContent.join('\n').toString());
-		console.log(readFileSync('./README.md').toString());
 
 		await execute('git', ['config', '--local', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com']);
 		await execute('git', ['config', '--local', 'user.name', 'Trial Bot']);
