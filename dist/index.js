@@ -7372,6 +7372,7 @@ const { stripIndents } = __webpack_require__(971);
 const { spawn } = __webpack_require__(129);
 
 let QUOTE_FONT_SIZE = core.getInput("QUOTE_FONT_SIZE");
+const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
 
 function getRandomQuote() {
 	return quotes[
@@ -7432,7 +7433,7 @@ Toolkit
 		await execute("git", ["config", "--local", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"]);
 		await execute("git", ["config", "--local", "user.name", "Trial Bot"]);
 		await execute("git", ["add", "-A"]);
-		await execute("git", ["commit", "-m", "Tried something new?"]);
+		await execute("git", ["commit", "-m", COMMIT_MESSAGE]);
 		await execute("git", ["push"]);
 	}, {
 		events: ["schedule", "workflow_dispatch"]

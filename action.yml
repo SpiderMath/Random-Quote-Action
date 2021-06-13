@@ -7,6 +7,10 @@ inputs:
     description: 'The size of the quote, lies between 1 to 6, 1 being the largest'
     default: 3
     required: false
+  COMMIT_MESSAGE:
+    description: 'The message which you want the bot to send on commit'
+    default: 'Updated the README with a new Programming Quote 💻'
+    required: false
 
 runs:
   using: 'node12'
