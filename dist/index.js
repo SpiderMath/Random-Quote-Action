@@ -7364,59 +7364,26 @@ exports.RequestError = RequestError;
 /***/ 469:
 /***/ (function(__unusedmodule, __unusedexports, __webpack_require__) {
 
-// const core = require('@actions/core');
-// const { spawn } = require('child_process');
+const core = __webpack_require__(470);
 const { Toolkit } = __webpack_require__(461);
 const { readFileSync, writeFileSync } = __webpack_require__(747);
 const quotes = __webpack_require__(418);
 const { stripIndents } = __webpack_require__(971);
 
-// const GH_USERNAME = 'Quotes Bot';
-// const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
-
-// Execute shell commands FIRST
-// function exec(cmd, args = []) {
-// 	new Promise((resolve, reject) => {
-// 		const app = spawn(cmd, args, { stdio: 'pipe' });
-// 		let stdout = '';
-// 		app.stdout.on('data', (data) => {
-// 			stdout = data;
-// 		});
-// 		app.on('close', (code) => {
-// 			if (code !== 0 && !stdout.includes('nothing to commit')) {
-// 				const err = new Error(`Invalid status code: ${code}`);
-// 				err.code = code;
-// 				return reject(err);
-// 			}
-// 			return resolve(code);
-// 		});
-// 		app.on('error', reject);
-// 	});
-// }
-
+let QUOTE_FONT_SIZE = core.getInput('QUOTE_FONT_SIZE');
 function getRandomQuote() {
 	return quotes[
 		Math.floor(quotes.length * Math.random())
 	];
 }
 
-// Commits the file
-// async function commitFile() {
-// 	console.log('I\'m in the file');
-// 	await exec('git', [
-// 		'config',
-// 		'--global',
-// 		'user.email',
-// 		'actions@github.com',
-// 	]);
-// 	await exec('git', ['config', '--global', 'user.name', GH_USERNAME]);
-// 	await exec('git', ['add', 'README.md']);
-// 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
-// 	await exec('git', ['push', 'origin']);
-// }
-
 Toolkit
 	.run(async (tools) => {
+		if(isNaN(QUOTE_FONT_SIZE)) return tools.exit.failure('QUOTE_FONT_SIZE is not a number!');
+		QUOTE_FONT_SIZE = Math.floor(Number(QUOTE_FONT_SIZE));
+
+		if(QUOTE_FONT_SIZE > 6 || QUOTE_FONT_SIZE < 1) return tools.exit.failure('QUOTE_FONT_SIZE is out of scope, the value has to be an integer between 1 & 6');
+
 		const readmeContent = readFileSync('./README.md', 'utf-8').split('\n');
 
 		const startIndex = readmeContent.findIndex(content => content.trim() === '<!--QUOTE-BOT:start-->');
@@ -7429,27 +7396,16 @@ Toolkit
 
 		const quote = getRandomQuote();
 		const string = stripIndents`
-			## <i>${quote.text}</i><br>
-			## - <b>${quote.author}</b><br>		
+			${'#'.repeat(QUOTE_FONT_SIZE)} <i>${quote.text}</i><br>
+			${'#'.repeat(QUOTE_FONT_SIZE)} - <b>${quote.author}</b><br>		
 		`;
 
 		readmeContent.splice(startIndex + 1, 0, string);
 
 		writeFileSync('./README.md', readmeContent.join('\n').toString());
 		console.log(readFileSync('./README.md').toString());
-
-		// try {
-		// 	await commitFile();
-		// }
-		// catch(err) {
-		// 	return tools.exit.failure(err);
-		// }
-
-		// tools.exit.success('Updated the readme successfully 🚀');
-
 	}, {
 		events: ['schedule', 'workflow_dispatch'],
-		// secrets: ['GITHUB_TOKEN'],
 	});
 
 /***/ }),

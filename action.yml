@@ -3,13 +3,9 @@ description: 'Puts a random Quote in your README'
 author: SpiderMath
 
 inputs:
-  GH_USERNAME:
-    description: 'Your GitHub Username'
-    default: ${{github.repository_owner}}
-    required: false
-  COMMIT_MESSAGE:
-    description: 'The commit message, which you want to be displayed on update'
-    default: ':zap: Updated the README with a new quote'
+  QUOTE_FONT_SIZE:
+    description: 'The size of the quote, lies between 1 to 6, 1 being the largest'
+    default: 3
     required: false
 
 runs:
