@@ -7404,12 +7404,12 @@ function getRandomQuote() {
 async function commitFile() {
 	await exec('git', [
 		'config',
-		'--local',
+		'--global',
 		'user.email',
 		'actions@github.com',
 	]);
-	await exec('git', ['config', '--local', 'user.name', GH_USERNAME]);
-	await exec('git', ['add', '.']);
+	await exec('git', ['config', '--global', 'user.name', GH_USERNAME]);
+	await exec('git', ['add', 'README.md']);
 	await exec('git', ['commit', '-m', COMMIT_MESSAGE]);
 	await exec('git', ['push']);
 }

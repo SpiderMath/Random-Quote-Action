@@ -21,5 +21,8 @@
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.28.0"
+  },
+  "scripts": {
+    "build": "npx ncc build ./Source/Actions.js -o Dist"
   }
 }
