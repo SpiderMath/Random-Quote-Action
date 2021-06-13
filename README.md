@@ -1,4 +1,4 @@
 <!--QUOTE-BOT:start-->
-## <i>For hundreds of millions of Americans who believe in God, prayer is our bridge between Earth and Heaven, our way of opening our hearts to the Lord. Through this intimate relationship we find peace and guidance.</i><br>
-## - <b>Nick Rahall</b><br>
+## <i>Beauty and the Beast seemed like it all was really brown. The whole thing was just so brown and orange and yellow, like Burger King or something. I don't think I would have liked Beauty and the Beast at any age.</i><br>
+## - <b>Mike Judge</b><br>
 <!--QUOTE-BOT:end-->
