@@ -7369,12 +7369,37 @@ const { Toolkit } = __webpack_require__(461);
 const { readFileSync, writeFileSync } = __webpack_require__(747);
 const quotes = __webpack_require__(418);
 const { stripIndents } = __webpack_require__(971);
+const { spawn } = __webpack_require__(129);
 
 let QUOTE_FONT_SIZE = core.getInput('QUOTE_FONT_SIZE');
+
 function getRandomQuote() {
 	return quotes[
 		Math.floor(quotes.length * Math.random())
 	];
+}
+
+/**
+ * @param {Toolkit} tools
+ * @param {string} cmd
+ * @param {string[]} args
+ */
+async function execute(cmd, args = []) {
+	new Promise((resolve, reject) => {
+		const child = spawn(cmd, args);
+
+		child.stderr.on('data', (data) => {
+			return reject(data);
+		});
+
+		child.stdout.on('data', (data) => {
+			console.log(data);
+		});
+
+		child.on('data', (data) => console.log(data));
+
+		resolve();
+	});
 }
 
 Toolkit
@@ -7404,6 +7429,12 @@ Toolkit
 
 		writeFileSync('./README.md', readmeContent.join('\n').toString());
 		console.log(readFileSync('./README.md').toString());
+
+		await execute('git', ['config', '--local', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com']);
+		await execute('git', ['config', '--local', 'user.name', 'Trial Bot']);
+		await execute('git', ['add', '-A']);
+		await execute('git', ['commit', '-m', 'Tried something new?']);
+		await execute('git', ['push']);
 	}, {
 		events: ['schedule', 'workflow_dispatch'],
 	});
