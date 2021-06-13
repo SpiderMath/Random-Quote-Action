@@ -46,6 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           QUOTE_FONT_SIZE: 6
+          GH_USERNAME: 'Readme Programmer'
 		  COMMIT_MESSAGE: 'Updated the README with a new Programming Quote 💻 '
 ```
 
@@ -55,3 +56,5 @@ Default is `3`
 > ℹ Also, you can change the `cron` parameter to change the duration till which you want to update the readme, this updates the readme every 30 minutes
 
 > ℹ You can also change the message shown on Commit, by putting COMMIT_MESSAGE as the text you want! Default is: 'Updated the README with a new Programming Quote 💻 '
+
+> ℹ The parameter GH_USERNAME can be configured to other values too, which will be the name of the bot committing the Quotes to your Repo, feel free to customise it as you want 😀 
