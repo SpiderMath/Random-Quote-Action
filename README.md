@@ -1,4 +1,3 @@
-<!--QUOTE-BOT:start-->
-## <i>Beauty and the Beast seemed like it all was really brown. The whole thing was just so brown and orange and yellow, like Burger King or something. I don't think I would have liked Beauty and the Beast at any age.</i><br>
-## - <b>Mike Judge</b><br>
-<!--QUOTE-BOT:end-->
+# Random Quote Action
+
+Other explaination and stuff coming soon, in the meanwhile check my [profile](https://github.com/SpiderMath/) out! It has this Action implemented (scroll down to the bottom)
