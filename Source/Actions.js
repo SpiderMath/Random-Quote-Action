@@ -3,6 +3,7 @@ const { spawn } = require('child_process');
 const { Toolkit } = require('actions-toolkit');
 const { readFileSync, writeFileSync } = require('fs');
 const quotes = require('./Quotes.json');
+const { stripIndents } = require('common-tags');
 
 const GH_USERNAME = 'Quotes Bot';
 const COMMIT_MESSAGE = core.getInput('COMMIT_MESSAGE');
@@ -60,7 +61,7 @@ Toolkit
 		if(startIndex !== endIndex) readmeContent.splice(startIndex + 1, (endIndex - startIndex) - 1);
 
 		const quote = getRandomQuote();
-		const string = `
+		const string = stripIndents`
 			## <i>${quote.text}</i><br>
 			## - <b>${quote.author}</b><br>		
 		`;
