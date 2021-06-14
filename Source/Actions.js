@@ -1,7 +1,7 @@
 const core = require("@actions/core");
 const { Toolkit } = require("actions-toolkit");
 const { readFileSync, writeFileSync } = require("fs");
-const quotes = require("./Quotes.json");
+const quotes = require("../Data/Quotes.json");
 const { stripIndents } = require("common-tags");
 const { spawn } = require("child_process");
 
