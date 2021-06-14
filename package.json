@@ -1,5 +1,5 @@
 {
-  "name": "random-quote-action",
+  "name": "random-programming-quote-action",
   "version": "1.0.0",
   "description": "Random Quote on Readme I think, am not sure",
   "main": "./Source/Action.js",
@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/SpiderMath/Random-Quote-Action.git"
   },
-  "author": "",
+  "author": "Defective Detective",
   "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/SpiderMath/Random-Quote-Action/issues"
