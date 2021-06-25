@@ -58,3 +58,6 @@ Default is `3`
 > ℹ You can also change the message shown on Commit, by putting COMMIT_MESSAGE as the text you want! Default is: 'Updated the README with a new Programming Quote 💻 '
 
 > ℹ The parameter GH_USERNAME can be configured to other values too, which will be the name of the bot committing the Quotes to your Repo, feel free to customise it as you want 😀 
+
+
+#### And that's pretty much it! Just run the Action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, since I use it myself in my README :grin:
