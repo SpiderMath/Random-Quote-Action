@@ -7,9 +7,9 @@ Put this in your README (the `...` stand for preceding and subsequent readme con
 
 ```md
 ...
-<!--QUOTE-BOT:start-->
+<!--PROGRAMMING-QUOTE-BOT:start-->
 
-<!--QUOTE-BOT:end-->
+<!--PROGRAMMING-QUOTE-BOT:end-->
 ...
 ```
 
