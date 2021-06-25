@@ -47,7 +47,7 @@ jobs:
         with:
           QUOTE_FONT_SIZE: 6
           GH_USERNAME: 'Readme Programmer'
-		  COMMIT_MESSAGE: 'Updated the README with a new Programming Quote 💻 '
+          	COMMIT_MESSAGE: 'Updated the README with a new Programming Quote 💻 '
 ```
 
 > ℹ The `QUOTE_FONT_SIZE` is the size of the font, in the form of h tags. h1 is the largest tag, h6 is the smallest. So if you want LARGE text, you will warn you use `1` or `2`. If you want a normalish size font use `5` or `6`<br>
