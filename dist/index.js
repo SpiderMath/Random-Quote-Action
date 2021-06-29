@@ -7408,8 +7408,8 @@ Toolkit
 		const startIndex = readmeContent.findIndex(content => content.trim() === "<!--PROGRAMMING-QUOTE-BOT:start-->");
 		const endIndex = readmeContent.findIndex(content => content.trim() === "<!--PROGRAMMING-QUOTE-BOT:end-->");
 
-		if(startIndex === -1) return tools.exit.failure("Couldn't find the <!--QUOTE-BOT:start--> comment! Exiting the process...");
-		if(endIndex === -1) return tools.exit.failure("Couldn't find the <!--QUOTE-BOT:end--> comment! Exiting the process...");
+		if(startIndex === -1) return tools.exit.failure("Couldn't find the <!--PROGRAMMING-QUOTE-BOT:start--> comment! Exiting the process...");
+		if(endIndex === -1) return tools.exit.failure("Couldn't find the <!--PROGRAMMING-QUOTE-BOT:end--> comment! Exiting the process...");
 
 		if(startIndex !== endIndex) readmeContent.splice(startIndex + 1, (endIndex - startIndex) - 1);
 
