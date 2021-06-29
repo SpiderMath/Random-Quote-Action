@@ -7405,8 +7405,8 @@ Toolkit
 
 		const readmeContent = readFileSync("./README.md", "utf-8").split("\n");
 
-		const startIndex = readmeContent.findIndex(content => content.trim() === "<!--QUOTE-BOT:start-->");
-		const endIndex = readmeContent.findIndex(content => content.trim() === "<!--QUOTE-BOT:end-->");
+		const startIndex = readmeContent.findIndex(content => content.trim() === "<!--PROGRAMMING-QUOTE-BOT:start-->");
+		const endIndex = readmeContent.findIndex(content => content.trim() === "<!--PROGRAMMING-QUOTE-BOT:end-->");
 
 		if(startIndex === -1) return tools.exit.failure("Couldn't find the <!--QUOTE-BOT:start--> comment! Exiting the process...");
 		if(endIndex === -1) return tools.exit.failure("Couldn't find the <!--QUOTE-BOT:end--> comment! Exiting the process...");
