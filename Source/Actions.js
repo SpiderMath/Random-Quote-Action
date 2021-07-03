@@ -57,7 +57,7 @@ Toolkit
 
 		const quote = getRandomQuote();
 		const string = stripIndents`
-			${"#".repeat(QUOTE_FONT_SIZE)} <i>${quote.quote}</i><br>
+			${"#".repeat(QUOTE_FONT_SIZE)} <blockquote>${quote.quote}</blockquote><br>
 			${"#".repeat(QUOTE_FONT_SIZE)} - <b>${quote.author}</b><br>		
 		`;
 
