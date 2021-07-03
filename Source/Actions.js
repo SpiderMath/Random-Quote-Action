@@ -59,7 +59,7 @@ Toolkit
 
 		const quote = getRandomQuote();
 		const string = stripIndents`
-			${BLOCKQUOTES ? "<blockquote>" : ""}${"#".repeat(QUOTE_FONT_SIZE)} ${ITALICS ? "<i>" : ""}${quote.quote}${ITALICS ? "</i>" : ""}<br>
+			${BLOCKQUOTES ? "<blockquote>" : ""}${"#".repeat(QUOTE_FONT_SIZE)} ${ITALICS ? "<i>" : ""} ${quote.quote} ${ITALICS ? "</i>" : ""}<br>
 			${"#".repeat(QUOTE_FONT_SIZE)} - <b>${quote.author}</b><br>
 			${BLOCKQUOTES ? "</blockquote>" : ""}
 		`;
