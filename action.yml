@@ -15,6 +15,14 @@ inputs:
     description: 'The bot name which you want the Action to commit quote with'
     default: 'Readme Programmer'
     required: false
+  ITALICS:
+    description: 'Whether you want the text to be italicized'
+    required: false
+    default: true
+  BLOCKQUOTES:
+    description: 'Whether you want your quote to be in a blockquote'
+    required: false
+    default: true
 
 runs:
   using: 'node12'

@@ -7366,6 +7366,8 @@ const { spawn } = __webpack_require__(129);
 let QUOTE_FONT_SIZE = core.getInput("QUOTE_FONT_SIZE");
 const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
 const GH_USERNAME = core.getInput("GH_USERNAME");
+const ITALICS = core.getInput("ITALICS");
+const BLOCKQUOTES = core.getInput("BLOCKQUOTES");
 
 function getRandomQuote() {
 	return quotes[
@@ -7415,8 +7417,9 @@ Toolkit
 
 		const quote = getRandomQuote();
 		const string = stripIndents`
-			${"#".repeat(QUOTE_FONT_SIZE)} <i>${quote.quote}</i><br>
-			${"#".repeat(QUOTE_FONT_SIZE)} - <b>${quote.author}</b><br>		
+			${BLOCKQUOTES ? "<blockquote>" : ""}${"#".repeat(QUOTE_FONT_SIZE)} ${ITALICS ? "<i>" : ""}${quote.quote}${ITALICS ? "</i>" : ""}<br>
+			${"#".repeat(QUOTE_FONT_SIZE)} - <b>${quote.author}</b><br>
+			${BLOCKQUOTES ? "</blockquote>" : ""}
 		`;
 
 		readmeContent.splice(startIndex + 1, 0, string);
