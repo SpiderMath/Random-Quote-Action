@@ -7,7 +7,6 @@ const { spawn } = require("child_process");
 
 let QUOTE_FONT_SIZE = core.getInput("QUOTE_FONT_SIZE");
 const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
-const GH_USERNAME = core.getInput("GH_USERNAME");
 const ITALICS = core.getInput("ITALICS");
 const BLOCKQUOTES = core.getInput("BLOCKQUOTES");
 
@@ -69,7 +68,7 @@ Toolkit
 		writeFileSync("./README.md", readmeContent.join("\n").toString());
 
 		await execute("git", ["config", "--local", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"]);
-		await execute("git", ["config", "--local", "user.name", GH_USERNAME]);
+		await execute("git", ["config", "--local", "user.name", "Readme Programmer"]);
 		await execute("git", ["add", "-A"]);
 		await execute("git", ["commit", "-m", COMMIT_MESSAGE]);
 		await execute("git", ["push"]);

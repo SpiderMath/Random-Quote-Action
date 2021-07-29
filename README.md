@@ -46,8 +46,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           QUOTE_FONT_SIZE: 6
-          GH_USERNAME: 'Readme Programmer'
-          	COMMIT_MESSAGE: 'Updated the README with a new Programming Quote 💻 '
+          COMMIT_MESSAGE: 'Updated the README with a new Programming Quote 💻 '
+          ITALICS: true
+          BLOCKQUOTES: true
 ```
 
 > ℹ The `QUOTE_FONT_SIZE` is the size of the font, in the form of h tags. h1 is the largest tag, h6 is the smallest. So if you want LARGE text, you will warn you use `1` or `2`. If you want a normalish size font use `5` or `6`<br>
@@ -57,7 +58,9 @@ Default is `3`
 
 > ℹ You can also change the message shown on Commit, by putting COMMIT_MESSAGE as the text you want! Default is: 'Updated the README with a new Programming Quote 💻 '
 
-> ℹ The parameter GH_USERNAME can be configured to other values too, which will be the name of the bot committing the Quotes to your Repo, feel free to customise it as you want 😀 
+> ℹ `ITALICS` is to let the action know Whether you want the text to be italicized (text meaning the Quote) Default is: false, that is you **don't** want it to be italicized
+
+> ℹ `BLOCKQUOTE` is to configure whether the Quote and Author shall be present in a BlockQuote or not. Default is: true, that is you **do** want your quote to be present in a blockquote, as I got it here
 
 
 #### And that's pretty much it! Just run the Action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, since I use it myself in my very own Profile README :grin: 

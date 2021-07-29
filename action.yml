@@ -11,10 +11,6 @@ inputs:
     description: 'The message which you want the bot to send on commit'
     default: 'Updated the README with a new Programming Quote 💻'
     required: false
-  GH_USERNAME:
-    description: 'The bot name which you want the Action to commit quote with'
-    default: 'Readme Programmer'
-    required: false
   ITALICS:
     description: 'Whether you want the text to be italicized'
     required: false
