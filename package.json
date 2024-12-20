@@ -19,8 +19,9 @@
     "common-tags": "^1.8.0"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.22.3",
-    "eslint": "^7.28.0"
+    "@vercel/ncc": "^0.38.3",
+    "eslint": "^7.28.0",
+    "ncc": "^0.3.6"
   },
   "scripts": {
     "build": "npx ncc build ./Source/Actions.js -o Dist"

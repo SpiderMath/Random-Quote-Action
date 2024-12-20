@@ -5,10 +5,10 @@ const quotes = require("../Data/Quotes.json");
 const { stripIndents } = require("common-tags");
 const { spawn } = require("child_process");
 
-let QUOTE_FONT_SIZE = core.getInput("QUOTE_FONT_SIZE");
-const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE");
-const ITALICS = core.getInput("ITALICS");
-const BLOCKQUOTES = core.getInput("BLOCKQUOTES");
+let QUOTE_FONT_SIZE = core.getInput("QUOTE_FONT_SIZE") ?? 3;
+const COMMIT_MESSAGE = core.getInput("COMMIT_MESSAGE") ?? "Updated the README with a new Programming Quote 💻 ";
+const ITALICS = core.getInput("ITALICS") ?? true;
+const BLOCKQUOTES = core.getInput("BLOCKQUOTES") ?? true;
 
 function getRandomQuote() {
 	return quotes[
