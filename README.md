@@ -1,8 +1,9 @@
 # Random Programming Quote Action
 
-Puts a totally RANDOM programming quote to your README! This can be really useful for your Profile Readme.<br>
+Puts a random programming quote to your README! It is a fun little project built by myself to satisfy the desire to have a randomly selected programming quote being put into my profile README. Feel free to use it for your own profile readmes! <br>
 
-# ⚙ Usage
+## ⚙ Usage
+
 Put this in your README (the `...` stand for preceding and subsequent readme content, please ignore that)
 
 ```md
@@ -13,13 +14,13 @@ Put this in your README (the `...` stand for preceding and subsequent readme con
 ...
 ```
 
-If you are thinking about putting ANY content between these 2 comments, please do not, since they will be removed by the GitHub action<br>
+**Do not place any content between these 2 comments as they WILL be removed by the GitHub action** <br>
 
-Make a new file in `.github/workflows` under your root directory. The file name can be anything you wish to keep! The only requirement is that it **has** to be a `.yml` file.<br>
+After adding these comments, make a new [`yml`](https://www.freecodecamp.org/news/what-is-yaml-the-yml-file-format/) file in `.github/workflows` under your root directory. It can have any name that<br>
 
-For the sake of this example, let's just name it `action.yml`<br>
+For the sake of this example, let's just name it `random_programming_quote_action.yml`<br>
 
-Next, please put the following code in `action.yml`
+Next, please put the following code in that file.
 
 ```yml
 name: Random Programming Quote
@@ -39,7 +40,7 @@ jobs:
       - name: Setup Node Environment
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '20'
       - name: Update the README
         uses: SpiderMath/Random-Quote-Action@main
         env:
@@ -51,16 +52,16 @@ jobs:
           BLOCKQUOTES: true
 ```
 
-> ℹ The `QUOTE_FONT_SIZE` is the size of the font, in the form of h tags. h1 is the largest tag, h6 is the smallest. So if you want LARGE text, you will warn you use `1` or `2`. If you want a normalish size font use `5` or `6`<br>
-Default is `3`
+## 🛠️ Parameters
+
+| Parameter | Type | Description | Default |
+| :-: | :-: | - | :-: |
+| `QUOTE_FONT_SIZE` | Integer | Size of the font, in the form of [`h`](https://www.w3schools.com/tags/tag_hn.asp) tags. `h6` is the smallest. So if you want LARGE text, you will want to you `1` or `2`. If you want a normalish size font, use `5` or `6` | `3` |
+| `COMMIT_MESSAGE` | String |  The message that will be shown on the commit which updates the README | `Updated the README with a new Programming Quote 💻` |
+| `ITALICS` | Boolean | Whether you want the quote to be italicized | `true` |
+| `BLOCKQUOTES` | Boolean | Whether you want the quote to be in a blockquote | `true` |
 
 > ℹ Also, you can change the `cron` parameter to change the duration till which you want to update the readme, this updates the readme every 30 minutes
 
-> ℹ You can also change the message shown on Commit, by putting COMMIT_MESSAGE as the text you want! Default is: 'Updated the README with a new Programming Quote 💻 '
 
-> ℹ `ITALICS` is to let the action know Whether you want the text to be italicized (text meaning the Quote) Default is: false, that is you **don't** want it to be italicized
-
-> ℹ `BLOCKQUOTE` is to configure whether the Quote and Author shall be present in a BlockQuote or not. Default is: true, that is you **do** want your quote to be present in a blockquote, as I got it here
-
-
-#### And that's pretty much it! Just run the Action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, since I use it myself in my very own Profile README :grin: 
+And that's pretty much it for the configurations! Just run the action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, enjoy! 😁
