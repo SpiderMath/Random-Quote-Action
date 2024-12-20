@@ -63,5 +63,25 @@ jobs:
 
 > ℹ Also, you can change the `cron` parameter to change the duration till which you want to update the readme, this updates the readme every 30 minutes
 
+## 🫂 Contributing
 
-And that's pretty much it for the configurations! Just run the action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, enjoy! 😁
+Feel free to add some feature requests, new quotes or suggest some bug-fixes! I may not be available instantly, as I'm a student, but I'll definitely look into it after I return from any hiatuses!
+
+### Project Structure
+
+The project is basically a simple GitHub Action, which uses the `actions/checkout@v2` and `actions/setup` to setup the node environment. The list of quotes is present in the [`Data/Quotes.json`](./Data/Quotes.json), and our source code is present at [`Source/Actions.js`](./Source/Actions.js).<br>
+
+After we've finished our script however, we need to compile it into a single file. We do so and save it in the [`dist`](./dist/) folder using the following command, facilated by the [`ncc`](https://npmjs.com/package/ncc) package.
+
+```sh
+npx ncc build ./Source/Actions.js -o Dist
+```
+
+To avoid having to keep rewriting this command again and again, I've added the `build` script to the [`package.json`](./package.json), and you can invoke the same via the following:
+
+```sh
+npm run build
+```
+
+## Signing off
+And that's pretty much it! Just run the action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, enjoy! 😁
