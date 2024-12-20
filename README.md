@@ -36,11 +36,11 @@ jobs:
     name: Put a random random programming quote in README
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Setup Node Environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '12'
+          node-version: '14'
       - name: Update the README
         uses: SpiderMath/Random-Quote-Action@main
         env:
@@ -69,7 +69,7 @@ Feel free to add some feature requests, new quotes or suggest some bug-fixes! I 
 
 ### Project Structure
 
-The project is basically a simple GitHub Action, which uses the `actions/checkout@v2` and `actions/setup` to setup the node environment. The list of quotes is present in the [`Data/Quotes.json`](./Data/Quotes.json), and our source code is present at [`Source/Actions.js`](./Source/Actions.js).<br>
+The project is basically a simple GitHub Action, which uses the [`actions/checkout`](https://github.com/actions/checkout) and [`actions/setup-node`](https://github.com/actions/setup-node) to setup the node environment. The list of quotes is present in the [`Data/Quotes.json`](./Data/Quotes.json), and our source code is present at [`Source/Actions.js`](./Source/Actions.js).<br>
 
 After we've finished our script however, we need to compile it into a single file. We do so and save it in the [`dist`](./dist/) folder using the following command, facilated by the [`ncc`](https://npmjs.com/package/ncc) package.
 
