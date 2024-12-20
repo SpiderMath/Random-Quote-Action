@@ -40,7 +40,7 @@ jobs:
       - name: Setup Node Environment
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '12'
       - name: Update the README
         uses: SpiderMath/Random-Quote-Action@main
         env:
@@ -82,6 +82,8 @@ To avoid having to keep rewriting this command again and again, I've added the `
 ```sh
 npm run build
 ```
+
+> As of v1.2.0, we are using [`@vercel/ncc`](https://npmjs.com/package/@vercel/ncc) instead of [`@zeit/ncc`](https://npmjs.com/package/@zeit/ncc) due to the deprecation of the latter.
 
 ## Signing off
 And that's pretty much it! Just run the action, and you'll see a random quote being shipped in every 30 minutes or the timeout you've set! Hope it proved useful, enjoy! 😁
